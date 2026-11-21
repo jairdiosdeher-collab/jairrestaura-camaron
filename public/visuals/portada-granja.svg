@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="t d">
+<title id="t">Granja de langostino de agua dulce</title>
+<desc id="d">Ilustración educativa de estanques acuícolas al amanecer, vegetación tropical y un langostino gigante de agua dulce.</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#b7e7ee"/><stop offset="1" stop-color="#f5e7bf"/></linearGradient>
+ <linearGradient id="water" x2="0" y2="1"><stop stop-color="#52b9bd"/><stop offset="1" stop-color="#126c78"/></linearGradient>
+ <linearGradient id="shell" x2="0" y2="1"><stop stop-color="#f5c77b"/><stop offset=".5" stop-color="#b87942"/><stop offset="1" stop-color="#70472f"/></linearGradient>
+ <linearGradient id="claw" x2="1" y2="1"><stop stop-color="#6ab9bd"/><stop offset="1" stop-color="#1b6675"/></linearGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter>
+ </defs>
+ <rect width="1100" height="720" fill="url(#sky)"/>
+ <circle cx="820" cy="145" r="74" fill="#fff3c5" opacity=".9"/>
+ <path d="M0 260 Q170 150 330 245 T650 230 T1100 220 V410 H0Z" fill="#4c9971"/>
+ <path d="M0 310 Q200 230 380 305 T760 285 T1100 300 V440 H0Z" fill="#28785f"/>
+ <g opacity=".95">
+  <path d="M35 350 L1065 350 L1010 650 L85 650Z" fill="#155d58"/>
+  <path d="M100 380 L520 380 L485 610 L130 610Z" fill="url(#water)" stroke="#d7e8c8" stroke-width="12"/>
+  <path d="M565 380 L1000 380 L965 610 L535 610Z" fill="url(#water)" stroke="#d7e8c8" stroke-width="12"/>
+  <path d="M150 420 Q300 390 470 425 M600 425 Q780 390 930 420" fill="none" stroke="#b6ece1" stroke-width="5" opacity=".55"/>
+  <path d="M175 510 Q310 480 445 510 M625 510 Q780 475 900 510" fill="none" stroke="#b6ece1" stroke-width="4" opacity=".45"/>
+  <g fill="#e7f6db"><path d="M50 350l-20 -75 33 36 8 -54 18 75z"/><path d="M1030 350l12 -75 20 43 22 -58 2 90z"/></g>
+ </g>
+ <g fill="#176347"><circle cx="80" cy="260" r="85"/><circle cx="180" cy="270" r="65"/><circle cx="1010" cy="255" r="100"/><circle cx="925" cy="275" r="67"/></g>
+ <g fill="#64a96f"><circle cx="58" cy="240" r="53"/><circle cx="145" cy="248" r="46"/><circle cx="1050" cy="230" r="62"/></g>
+ <ellipse cx="570" cy="630" rx="370" ry="35" fill="#083d48" opacity=".28" filter="url(#shadow)"/>
+ <!-- Langostino estilizado -->
+ <g transform="translate(540 405) rotate(-8)">
+  <path d="M-255 5 Q-330 -55 -375 -120 Q-310 -105 -260 -40" fill="none" stroke="#b77a48" stroke-width="12" stroke-linecap="round"/>
+  <path d="M-245 15 Q-330 30 -390 82" fill="none" stroke="#b77a48" stroke-width="8" stroke-linecap="round"/>
+  <path d="M-205 -12 Q-145 -90 -30 -90 Q105 -85 205 -5 Q130 82 15 88 Q-120 95 -205 30Z" fill="url(#shell)" stroke="#704a32" stroke-width="8"/>
+  <g fill="#dba66a" stroke="#865638" stroke-width="5">
+   <path d="M-125 -67 Q-160 0 -120 78 Q-175 64 -190 15 Q-190 -45 -125 -67Z"/>
+   <path d="M-55 -84 Q-90 0 -48 89 Q-105 83 -120 22 Q-124 -48 -55 -84Z"/>
+   <path d="M20 -78 Q-10 0 28 88 Q-28 90 -45 20 Q-53 -43 20 -78Z"/>
+   <path d="M90 -58 Q65 10 104 73 Q53 88 31 23 Q25 -27 90 -58Z"/>
+   <path d="M150 -30 Q132 20 165 55 Q123 76 103 25 Q105 -12 150 -30Z"/>
+  </g>
+  <path d="M-204 -25 Q-260 -82 -285 -155" fill="none" stroke="#4f8d91" stroke-width="7" stroke-linecap="round"/>
+  <path d="M-195 -15 Q-275 -5 -330 -45" fill="none" stroke="#4f8d91" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="-218" cy="-28" rx="28" ry="23" fill="#e9bd7b" stroke="#805334" stroke-width="5"/>
+  <circle cx="-232" cy="-37" r="8" fill="#132f39"/><circle cx="-234" cy="-40" r="3" fill="#fff"/>
+  <g stroke="#5a8790" stroke-width="10" fill="none" stroke-linecap="round">
+   <path d="M-140 50 Q-150 135 -225 155"/><path d="M-65 65 Q-75 155 -140 185"/><path d="M20 65 Q30 150 -25 190"/><path d="M95 48 Q125 125 80 170"/>
+  </g>
+  <g fill="url(#claw)" stroke="#164f60" stroke-width="7">
+   <path d="M-225 145 Q-285 165 -330 230 Q-350 250 -370 226 Q-372 205 -345 185 Q-300 125 -240 118Z"/>
+   <path d="M-140 175 Q-180 220 -185 275 Q-188 300 -210 295 Q-235 285 -220 250 Q-210 190 -160 150Z"/>
+  </g>
+  <path d="M205 -5 Q265 -40 310 -5 Q280 28 230 40Z" fill="#b6d3c0" stroke="#6c8d72" stroke-width="7"/>
+  <path d="M215 10 Q285 60 310 100 Q270 95 225 48" fill="#8eb8a5" stroke="#6c8d72" stroke-width="6"/>
+ </g>
+ <g fill="#fff" opacity=".45"><path d="M190 465q65 -20 130 0" stroke="#fff" stroke-width="4" fill="none"/><path d="M765 470q60 -20 120 0" stroke="#fff" stroke-width="4" fill="none"/></g>
+ <rect x="36" y="35" width="425" height="88" rx="20" fill="#073b49" opacity=".92"/>
+ <text x="66" y="76" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff">JAIRRESTAURA CAMARÓN</text>
+ <text x="67" y="104" font-family="Arial,sans-serif" font-size="15" font-weight="600" letter-spacing="2" fill="#a9e6cb">APRENDE · CULTIVA · PRODUCE</text>
+</svg>
