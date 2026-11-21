@@ -1,0 +1,19 @@
+{
+  "name": "JAIRRESTAURA CAMARÓN",
+  "short_name": "Camaronicultura",
+  "description": "Escuela y herramientas gratuitas para aprender y gestionar camaronicultura de agua dulce.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3f7f5",
+  "theme_color": "#082f39",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
