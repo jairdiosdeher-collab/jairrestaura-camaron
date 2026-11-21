@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#082f39"><title>Curso interactivo complementario | JAIRRESTAURA CAMARÓN</title><style>body{margin:0;background:#082f39;color:#fff;font:16px system-ui;display:grid;min-height:100vh;place-items:center}.load{max-width:620px;padding:32px;text-align:center}.load a{color:#7ee7ce}</style></head>
+<body><main class="load"><h1>JAIRRESTAURA CAMARÓN</h1><p>Cargando el curso interactivo complementario…</p><p><a href="/">Volver a la aplicación principal</a></p></main>
+<script>
+(async()=>{
+try{
+const response=await fetch('./course.html.gz.b64');
+if(!response.ok)throw new Error('No se pudo cargar el recurso del curso.');
+const encoded=(await response.text()).trim();
+const binary=atob(encoded);
+const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+if(!('DecompressionStream' in window))throw new Error('Este navegador no permite descomprimir el recurso. Actualiza tu navegador.');
+const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+const html=await new Response(stream).text();
+document.open();document.write(html);document.close();
+}catch(error){document.querySelector('.load').innerHTML='<h1>No fue posible abrir el curso</h1><p>'+String(error.message)+'</p><p><a href="/">Volver a la aplicación principal</a></p>';}
+})();
+</script></body></html>
