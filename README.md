@@ -72,3 +72,13 @@ Antes de iniciar un cultivo en Colombia, consulta directamente a AUNAP, ICA y a 
 ## Estado de validación
 
 El contenido ampliado se ha incorporado al repositorio. La compilación de producción, descarga del certificado, experiencia móvil y despliegue final deben comprobarse en el entorno de Vercel antes de declarar la plataforma lista para lanzamiento. El certificado es una constancia educativa privada de finalización, no un título oficial, acreditación estatal ni licencia profesional.
+
+
+## Curso interactivo complementario
+
+- Disponible desde la navegación de la aplicación y en `/curso-completo/`.
+- Incluye tres módulos de aprendizaje, comprobaciones, calculadora de escenarios y evaluación final.
+- El curso se publica como recurso estático independiente; no reemplaza la escuela completa ni el curso práctico existente.
+- El avance usa una clave local independiente del resto de la aplicación.
+- La constancia generada es personal y educativa: no es título oficial, licencia profesional, acreditación estatal ni verificación externa.
+- Las cifras del archivo de origen que dependían de condiciones de granja se sustituyeron o marcaron como variables que requieren validación local. No deben tomarse como dosis, rangos universales, garantías de supervivencia o promesas de rentabilidad.
