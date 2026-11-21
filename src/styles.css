@@ -186,3 +186,22 @@ th{font-size:10px}
  .featured-card b{font-size:13px}
  .featured-card small{font-size:11px}
 }
+
+
+/* Fotografías reales y presentación editorial de la escuela */
+.hero-visual{background:#0b4c50}
+.hero-art-image{object-fit:cover;object-position:center 54%;transform:scale(1.015);filter:saturate(1.08) contrast(1.03)}
+.hero-visual::after{background:linear-gradient(90deg,#052f35a8 0%,#052f3520 45%,#052f3555 100%)}
+.featured-card img{object-fit:cover;transition:transform .45s ease;filter:saturate(1.08) contrast(1.02)}
+.featured-card:hover img{transform:scale(1.045)}
+.featured-card{box-shadow:0 8px 22px #0a3c3212}
+.lesson-visual.photo-lesson{background:#fff;border:1px solid #dce9e2;box-shadow:0 12px 30px #123f3210}
+.lesson-visual.photo-lesson img{display:block;width:100%;aspect-ratio:16/9;height:auto;max-height:520px;object-fit:cover;object-position:center;background:#e7f1ec}
+.lesson-visual.photo-lesson figcaption{padding:15px 17px 17px}
+.lesson-visual.photo-lesson figcaption>b{color:#26805d;letter-spacing:1.2px}
+.lesson-visual.photo-lesson figcaption>span{font-size:14px;line-height:1.7;color:#31574d}
+.lesson-visual.photo-lesson figcaption>small{font-size:11px;line-height:1.65;color:#758b80}
+.visual-sources{display:flex;flex-wrap:wrap;gap:10px 17px;margin-top:4px}
+.visual-sources a{color:#287b5d;font-size:11px;font-weight:800;text-decoration:none}
+.visual-sources a:hover{text-decoration:underline}
+@media(max-width:760px){.hero-art-image{object-position:center 50%}.lesson-visual.photo-lesson img{aspect-ratio:4/3;max-height:none}.lesson-visual.photo-lesson figcaption{padding:12px}}
