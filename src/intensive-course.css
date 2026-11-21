@@ -8,3 +8,20 @@
 .intensive-finish{flex-wrap:wrap}
 .intensive-finish .primary,.intensive-finish .outline{margin-top:8px}
 @media(max-width:620px){.intensive-lesson-art{border-radius:9px}}
+
+/* Lectura clara del curso práctico */
+.intensive-course{gap:22px}
+.intensive-hero{grid-template-columns:minmax(0,1fr) 145px;padding:30px;border-radius:20px}
+.intensive-hero h2{font-size:clamp(25px,3vw,34px);line-height:1.25}
+.intensive-hero p{font-size:15px;line-height:1.8}
+.intensive-hero-actions input{font-size:14px;min-height:44px}
+.intensive-progress{padding:19px 21px}
+.intensive-progress>div:first-child{font-size:13px}
+.intensive-lessons article{padding:17px}
+.intensive-lessons article h4{font-size:17px;line-height:1.4}
+.intensive-lessons article p{font-size:14px;line-height:1.8}
+.intensive-lessons article span{font-size:11px}
+.intensive-unit h3{font-size:22px;line-height:1.3}
+.intensive-unit p,.intensive-course p{line-height:1.8}
+.intensive-course button{font-size:13px}
+@media(max-width:650px){.intensive-hero{grid-template-columns:1fr;padding:21px}.intensive-shrimp{font-size:58px}.intensive-lessons article p{font-size:13px}}

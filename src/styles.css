@@ -63,3 +63,126 @@
 .library-visual h2{font-size:clamp(17px,2vw,24px);line-height:1.25;color:#164b4a;margin:7px 0}
 .library-visual p{font-size:11px;line-height:1.8;color:#607b70;max-width:520px}
 @media(max-width:650px){.library-visual{grid-template-columns:1fr;gap:12px}.library-visual img{max-height:230px;object-fit:cover}}
+
+
+/* Accesibilidad visual: lectura cómoda en escritorio y móvil */
+:root{font-size:16px;line-height:1.6}
+body{font-size:15px;line-height:1.65;color:#24433d}
+button,input,select,textarea{font-size:14px}
+.sidebar{width:276px;padding:25px 16px 18px}
+.main{margin-left:276px}
+.nav{font-size:13px;line-height:1.45;padding:12px 11px;min-height:43px}
+.side-label{font-size:10px;line-height:1.5}
+.sidebar-bottom{font-size:11px}
+.topbar{min-height:70px;padding:0 30px}
+.crumb{font-size:12px}
+.free{font-size:10px}
+.backup-top{font-size:12px;padding:9px 12px}
+.content{width:min(1400px,100%);padding:32px 34px 48px}
+.hero{min-height:390px;border-radius:20px}
+.hero-text{padding:44px 0 36px 42px}
+.hero h1{font-size:clamp(36px,3.6vw,52px);line-height:1.12}
+.hero-text>p{font-size:15px;line-height:1.8;max-width:570px}
+.kicker,.eyebrow{font-size:11px;letter-spacing:1.25px}
+.primary,.outline-light,.outline,.danger-outline{font-size:13px;padding:11px 15px}
+.proof{font-size:11px}
+.section-title{margin:34px 0 16px}
+.section-title h2{font-size:23px;line-height:1.3}
+.stat{padding:18px}
+.stat>div{font-size:12px}
+.stat>b{font-size:28px}
+.stat>small{font-size:11px}
+.panel{padding:22px}
+.panel-title h3{font-size:17px}
+.module-row{padding:13px 0}
+.module-desc b{font-size:13px}
+.module-desc small{font-size:11px}
+.quick{font-size:13px;padding:15px 0}
+.callout{padding:17px 18px}
+.callout b{font-size:13px}
+.callout span,.notice p{font-size:12px;line-height:1.7}
+.page-intro{padding:12px 0 26px}
+.page-intro h1{font-size:clamp(27px,3vw,35px);line-height:1.25}
+.page-intro p{font-size:14px;line-height:1.8}
+.module-choice{padding:13px 9px}
+.module-choice b{font-size:12px;line-height:1.45}
+.module-choice small{font-size:11px;line-height:1.5}
+.reader-head h2{font-size:25px;line-height:1.3}
+.reader-head p{font-size:14px;line-height:1.75}
+.lesson-tab{font-size:12px;padding:9px 12px}
+.lesson-body h3{font-size:22px;line-height:1.3}
+.lesson-body>p{font-size:16px;line-height:1.9;color:#425f56}
+.lesson-label,.lesson-visual figcaption>b{font-size:10px}
+.lesson-visual figcaption>span{font-size:14px;line-height:1.7}
+.lesson-visual figcaption>small{font-size:11px;line-height:1.65}
+.lesson-warning{font-size:12px;line-height:1.75;padding:14px}
+.complete-action,.lesson-nav button{font-size:12px;padding:11px 14px}
+.question>b{font-size:13px;line-height:1.55}
+.question label{font-size:12px;line-height:1.5}
+.field>span{font-size:12px}
+.field>span small{font-size:11px}
+.field input,.field select,.field textarea,.search-input{font-size:14px;min-height:44px;padding:10px 12px}
+.field textarea{min-height:90px}
+.guide b{font-size:13px}
+.guide p{font-size:12px;line-height:1.7}
+th,td{font-size:12px;padding:12px}
+th{font-size:10px}
+.toolbar b{font-size:14px}
+.toolbar small{font-size:11px}
+.result span,.result b{font-size:12px}
+.muted{font-size:11px}
+.info-card h3{font-size:16px}
+.info-card li{font-size:12px;line-height:1.75}
+.checklist label{font-size:12px;line-height:1.6}
+.source-card h3{font-size:15px}
+.source-card p{font-size:12px;line-height:1.75}
+.source-card a{font-size:12px}
+.gloss-row b{font-size:13px}
+.gloss-row span{font-size:12px;line-height:1.7}
+.footer{font-size:11px;padding:20px 34px}
+.toast{font-size:13px}
+.featured-learning{margin:26px 0 12px;padding:22px;border:1px solid #dcebe3;border-radius:18px;background:linear-gradient(135deg,#f2faf5,#f6fbff)}
+.featured-heading h2{font-size:clamp(21px,2.5vw,28px);line-height:1.3;color:#174b43;margin:7px 0}
+.featured-heading p{font-size:14px;line-height:1.7;color:#627c71;margin:0 0 17px}
+.featured-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.featured-card{display:flex;flex-direction:column;overflow:hidden;text-align:left;padding:0;border:1px solid #dfeae4;border-radius:14px;background:#fff;color:#24483e;box-shadow:0 5px 16px #0c46330a;transition:transform .18s ease,box-shadow .18s ease}
+.featured-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px #0c46331b}
+.featured-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b4c53}
+.featured-card>span{display:grid;gap:6px;padding:15px}
+.featured-card b{font-size:15px;line-height:1.35}
+.featured-card small{font-size:12px;line-height:1.65;color:#6b8278}
+.featured-card em{font-size:12px;line-height:1.5;color:#267657;font-style:normal;font-weight:800;margin-top:3px}
+@media(max-width:1050px){.content{padding:26px 22px}.sidebar{width:258px}.main{margin-left:258px}.featured-cards{gap:10px}}
+@media(max-width:760px){
+ .sidebar{width:285px}
+ .main{margin-left:0}
+ .content{padding:18px 14px 30px}
+ .topbar{height:auto;min-height:60px;padding:8px 13px}
+ .crumb{font-size:10px}
+ .hero{min-height:0}
+ .hero-text{padding:30px 22px 25px}
+ .hero h1{font-size:clamp(31px,8vw,40px)}
+ .hero-text>p{font-size:14px;line-height:1.75}
+ .hero-visual{min-height:245px}
+ .featured-learning{padding:16px;margin:18px 0}
+ .featured-cards{grid-template-columns:1fr}
+ .featured-card{display:grid;grid-template-columns:42% 1fr;min-height:125px}
+ .featured-card img{height:100%;min-height:125px;aspect-ratio:auto;object-fit:cover}
+ .featured-card>span{align-content:center;padding:12px}
+ .featured-card b{font-size:14px}
+ .featured-card small{font-size:12px}
+ .section-title h2{font-size:19px}
+ .page-intro h1{font-size:26px}
+ .page-intro p{font-size:13px}
+ .lesson-body>p{font-size:15px;line-height:1.8}
+ .lesson-visual figcaption>span{font-size:13px}
+ .form-grid{gap:12px}
+ .field>span{font-size:12px}
+ .footer{padding:16px 14px}
+}
+@media(max-width:390px){
+ .featured-card{grid-template-columns:38% 1fr}
+ .featured-card>span{padding:9px}
+ .featured-card b{font-size:13px}
+ .featured-card small{font-size:11px}
+}
