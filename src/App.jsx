@@ -3,7 +3,7 @@ import {modules,glossary,sources} from './content.js';
 import {expandedLessons,moduleQuizzes} from './expanded-content.js';
 import ProductionCalculator from './ProductionCalculator.jsx';
 import IntensiveCourse from './IntensiveCourse.jsx';
-import {Waves,LayoutDashboard,GraduationCap,Droplets,Calculator,Package,Store,BookOpen,Menu,X,Search,ChevronRight,CheckCircle2,Sprout,Fish,FlaskConical,TrendingUp,ShieldCheck,ClipboardList,Plus,Download,Trash2,Activity,BookMarked,ChartNoAxesCombined,FileText,ExternalLink,Lightbulb,CalendarDays,Save,RotateCcw} from 'lucide-react';
+import {Waves,LayoutDashboard,GraduationCap,Droplets,Calculator,Package,Store,BookOpen,Menu,X,Search,ChevronRight,CheckCircle2,Sprout,Fish,FlaskConical,TrendingUp,ShieldCheck,ClipboardList,Plus,Download,Trash2,Activity,BookMarked,ChartNoAxesCombined,FileText,ExternalLink,Lightbulb,CalendarDays,Save,RotateCcw,Sun,Moon} from 'lucide-react';
 
 const nav=[
 {id:'home',label:'Panel principal',icon:LayoutDashboard},
@@ -58,6 +58,8 @@ function createCertificatePDF(studentName, completionDate) {
 }
 function App(){
  const [page,setPage]=useState('home'),[mobile,setMobile]=useState(false);
+ const [theme,setTheme]=useState(()=>{try{return localStorage.getItem('jrc-theme')==='dark'?'dark':'light'}catch{return 'light'}});
+ const toggleTheme=()=>setTheme(current=>{const next=current==='dark'?'light':'dark';try{localStorage.setItem('jrc-theme',next)}catch{}return next});
  const [completed,setCompleted]=useState(()=>read('completed',[]));
  const [passedModules,setPassedModules]=useState(()=>read('passedModules',[]));
  const [records,setRecords]=useState(()=>read('records',[]));
@@ -89,10 +91,10 @@ function App(){
  const exportData=()=>{const data={app:'JAIRRESTAURA CAMARÓN',exportedAt:new Date().toISOString(),farm,completed,passedModules,records,water};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='respaldo-jairrestaura-camaron.json';a.click();URL.revokeObjectURL(url);notify('Respaldo descargado.')};
  const clearData=()=>{if(!window.confirm('¿Borrar registros, mediciones y progreso guardados en este navegador? Esta acción no se puede deshacer. Descarga primero un respaldo si lo necesitas.'))return;['records','water','completed','passedModules'].forEach(k=>localStorage.removeItem('jrc-'+k));setRecords([]);setWater([]);setCompleted([]);setPassedModules([]);notify('Datos locales borrados.')};
  const title=nav.find(n=>n.id===page)?.label||'Panel principal';
- return <div className="shell">
+ return <div className={`shell theme-${theme}`}>
  <aside className={mobile?'sidebar open':'sidebar'}><div className="brand"><div className="brand-logo"><Waves/></div><div><b>JAIRRESTAURA</b><span>CAMARÓN</span></div><button className="mobile-close" onClick={()=>setMobile(false)}><X/></button></div><div className="side-label">CENTRO DE APRENDIZAJE Y GESTIÓN</div><nav>{nav.map(n=><button key={n.id} className={page===n.id?'nav active':'nav'} onClick={()=>{setPage(n.id);setMobile(false)}}><n.icon size={18}/>{n.label}{page===n.id&&<ChevronRight className="nav-chevron" size={15}/>}</button>)}</nav><div className="sidebar-bottom"><ShieldCheck size={17}/> Gratuito · Sin cuenta · Datos locales</div></aside>
  {mobile&&<button className="scrim" onClick={()=>setMobile(false)} aria-label="Cerrar menú"/>}
- <main className="main"><header className="topbar"><button className="menu-button" onClick={()=>setMobile(true)}><Menu/></button><div className="crumb">JAIRRESTAURA <span>/</span> <b>{title}</b></div><div className="top-right"><span className="free">● ACCESO LIBRE</span><button className="backup-top" onClick={exportData}><Download size={15}/> Respaldo</button></div></header>
+ <main className="main"><header className="topbar"><button className="menu-button" onClick={()=>setMobile(true)}><Menu/></button><div className="crumb">JAIRRESTAURA <span>/</span> <b>{title}</b></div><div className="top-right"><span className="free">● ACCESO LIBRE</span><button className="theme-toggle" onClick={toggleTheme} type="button" aria-label={theme==="dark"?"Activar modo día":"Activar modo noche"} title={theme==="dark"?"Cambiar a modo día":"Cambiar a modo noche"}>{theme==="dark"?<Sun size={16}/>:<Moon size={16}/>}<span>{theme==="dark"?"Modo día":"Modo noche"}</span></button><button className="backup-top" onClick={exportData}><Download size={15}/> Respaldo</button></div></header>
  <div className="content">
  {page==='home'&&<><section className="hero"><div className="hero-text"><span className="kicker">ESCUELA · GRANJA · EMPRENDIMIENTO</span><h1>Del aprendizaje<br/><em>a tu primera cosecha.</em></h1><p>Una plataforma abierta para aprender y organizar un proyecto de langostino gigante de agua dulce. Aprende con criterio técnico, registra tus datos y evalúa antes de invertir.</p><div className="hero-actions"><button className="primary" onClick={()=>setPage('school')}>Entrar a la escuela <ChevronRight size={17}/></button><button className="outline-light" onClick={()=>setPage('calculators')}>Usar calculadoras</button></div><div className="proof"><span><CheckCircle2/> Sin registro</span><span><CheckCircle2/> Sin suscripción</span><span><CheckCircle2/> Respaldo exportable</span></div></div><div className="hero-visual"><img className="hero-art-image" src="https://eurastip.eu/wp-content/uploads/2018/10/hand-with-Giant-Freshwater-Prawn-Macrobrachium-rosenbergii-on-shrimp-farm.jpg" alt="Langostino gigante de agua dulce en una granja acuícola" fetchPriority="high" onError={e=>{e.currentTarget.onerror=null;e.currentTarget.src="/visuals/portada-granja.svg";}}/><div className="species"><small>ESPECIE DE ESTUDIO</small><b>Macrobrachium rosenbergii</b><span>Langostino gigante de agua dulce</span></div></div></section>
  <section className="featured-learning" aria-label="Explora la camaronicultura">

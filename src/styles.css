@@ -205,3 +205,29 @@ th{font-size:10px}
 .visual-sources a{color:#287b5d;font-size:11px;font-weight:800;text-decoration:none}
 .visual-sources a:hover{text-decoration:underline}
 @media(max-width:760px){.hero-art-image{object-position:center 50%}.lesson-visual.photo-lesson img{aspect-ratio:4/3;max-height:none}.lesson-visual.photo-lesson figcaption{padding:12px}}
+
+/* Control accesible de luz de día y modo noche */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:8px 12px;border:1px solid #d8e6df;border-radius:9px;background:#f3faf6;color:#245f4c;font-size:12px;font-weight:800;white-space:nowrap;transition:background .2s,border-color .2s}
+.theme-toggle:hover{background:#e4f4eb;border-color:#a8cdb9}
+.theme-dark{background:#101c20;color:#e4efeb}
+.theme-dark .main,.theme-dark .content{background:#101c20;color:#e4efeb}
+.theme-dark .topbar{background:#17282d;border-color:#294047;color:#dce9e4}
+.theme-dark .crumb,.theme-dark .crumb b{color:#dce9e4}
+.theme-dark .content p,.theme-dark .content label,.theme-dark .content small{color:inherit}
+.theme-dark .panel,.theme-dark .stat-card,.theme-dark .featured-card,.theme-dark .lesson-visual.photo-lesson,.theme-dark .quiz,.theme-dark .question,.theme-dark .info-card,.theme-dark .source-card,.theme-dark .course-card,.theme-dark .calculator-card,.theme-dark .record-card,.theme-dark .water-card{background:#1b2d32;color:#e4efeb;border-color:#344b50}
+.theme-dark .featured-learning{background:linear-gradient(135deg,#1b3432,#1c303b);border-color:#35534d}
+.theme-dark .featured-heading h2,.theme-dark .section-title h2,.theme-dark .section-heading h2,.theme-dark .panel h3,.theme-dark .stat-card>b,.theme-dark .featured-card b,.theme-dark .lesson-section h4{color:#e5f3ec}
+.theme-dark .featured-heading p,.theme-dark .featured-card small,.theme-dark .lesson-visual.photo-lesson figcaption>span,.theme-dark .lesson-visual.photo-lesson figcaption>small{color:#b5c9c1}
+.theme-dark .featured-card em,.theme-dark .visual-sources a{color:#8de0b7}
+.theme-dark input,.theme-dark select,.theme-dark textarea{background:#122328;color:#e7f1ed;border-color:#40585c}
+.theme-dark input::placeholder,.theme-dark textarea::placeholder{color:#91a8a3}
+.theme-dark .learning-objective,.theme-dark .practice-box,.theme-dark .deliverable-box,.theme-dark .reflection-box,.theme-dark .quiz-score{background:#203a38;color:#e4efeb;border-color:#3d6255}
+.theme-dark .table-wrap,.theme-dark table{color:#e4efeb}
+.theme-dark th{background:#243a3f;color:#d8e9e2}
+.theme-dark td{border-color:#344b50}
+.theme-dark .theme-toggle{background:#29453d;border-color:#527b68;color:#baf0d0}
+.theme-dark .theme-toggle:hover{background:#34584a}
+.theme-dark .outline,.theme-dark .link,.theme-dark .text-link{color:#9be3bf}
+.theme-dark .muted,.theme-dark .lesson-source{color:#a9beb7}
+@media(max-width:760px){.top-right{gap:7px}.theme-toggle{padding:8px 9px;min-height:34px}.topbar{gap:8px}}
+@media(max-width:390px){.theme-toggle{padding:7px}.theme-toggle span{font-size:10px}.top-right{gap:5px}}
