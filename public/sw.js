@@ -1,4 +1,4 @@
-const CACHE="jairrestaura-camaron-v2";
+const CACHE="jairrestaura-camaron-v3";
 self.addEventListener("install",event=>{
   event.waitUntil(
     caches.open(CACHE)
