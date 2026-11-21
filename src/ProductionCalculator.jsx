@@ -1,5 +1,6 @@
 import React,{useMemo,useState} from 'react';
 import {Calculator,Info} from 'lucide-react';
+import './production-calculator.css';
 
 const money=n=>Number(n||0).toLocaleString('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0});
 const number=n=>Number(n||0).toLocaleString('es-CO',{maximumFractionDigits:2});
