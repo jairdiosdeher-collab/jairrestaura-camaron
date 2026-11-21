@@ -39,3 +39,13 @@
 .project-checklist input{margin-top:2px;accent-color:#4a9b73}
 .project-progress{font-size:10px;font-weight:800;color:#398363;margin:10px 0}
 @media(max-width:760px){.project-checklist{grid-template-columns:1fr}.lesson-section p,.practice-box p,.deliverable-box p,.reflection-box p{font-size:10px}}
+
+.lesson-visual{margin:20px 0 24px;border:1px solid #dceae3;border-radius:14px;overflow:hidden;background:#f7fbf9}
+.lesson-visual img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain;background:#f7fbf9}
+.lesson-visual figcaption{display:grid;gap:6px;padding:13px 15px 15px;color:#526e67}
+.lesson-visual figcaption>b{font-size:9px;letter-spacing:1.1px;color:#36836a}
+.lesson-visual figcaption>span{font-size:11px;line-height:1.55;color:#355c55}
+.lesson-visual figcaption>small{font-size:9px;line-height:1.5;color:#7b9289}
+.visual-sources{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:3px}
+.visual-sources a{font-size:10px;font-weight:700;color:#28785e;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.lesson-visual{margin:15px 0 19px;border-radius:10px}.lesson-visual img{max-height:none}.lesson-visual figcaption{padding:11px 12px}.visual-sources{gap:8px 13px}}
