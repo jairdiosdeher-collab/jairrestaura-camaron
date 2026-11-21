@@ -49,3 +49,11 @@
 .visual-sources{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:3px}
 .visual-sources a{font-size:10px;font-weight:700;color:#28785e;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.lesson-visual{margin:15px 0 19px;border-radius:10px}.lesson-visual img{max-height:none}.lesson-visual figcaption{padding:11px 12px}.visual-sources{gap:8px 13px}}
+
+
+/* Portada acuícola ilustrada */
+.hero-visual{overflow:hidden;isolation:isolate;background:#0d5556}
+.hero-art-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.96}
+.hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06394322,transparent 45%,#06394322);pointer-events:none}
+.hero-visual .species{z-index:2}
+@media(max-width:760px){.hero-visual{min-height:240px}.hero-art-image{object-position:center 52%}}
