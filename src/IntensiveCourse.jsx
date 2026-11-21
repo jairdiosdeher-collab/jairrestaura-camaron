@@ -10,28 +10,42 @@ const course=[
 
 
 function downloadCourseCertificate(name,score,date){
- const clean=s=>String(s).normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^\\x20-\\x7E]/g,'');
- const esc=s=>clean(s).replace(/\\\\/g,'\\\\\\\\').replace(/\\(/g,'\\\\(').replace(/\\)/g,'\\\\)');
+ const clean=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\x20-\x7E]/g,'');
+ const esc=s=>clean(s).replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)');
  const stream=[
- 'q 0.04 0.20 0.23 rg 0 0 842 595 re f Q',
- 'q 0.94 0.98 0.96 rg 20 20 802 555 re f Q',
- 'q 0.10 0.39 0.35 RG 3 w 34 34 774 527 re S Q',
- 'BT /F1 13 Tf 0.15 0.39 0.31 rg 1 0 0 1 300 515 Tm (JAIRRESTAURA CAMARON) Tj ET',
- 'BT /F2 29 Tf 0.04 0.20 0.23 rg 1 0 0 1 190 438 Tm (CONSTANCIA DE FINALIZACION) Tj ET',
- 'BT /F1 15 Tf 0.20 0.34 0.30 rg 1 0 0 1 265 380 Tm (Se deja constancia de que:) Tj ET',
- 'BT /F2 27 Tf 0.04 0.30 0.27 rg 1 0 0 1 140 322 Tm ('+esc(name)+') Tj ET',
- 'q 0.35 0.60 0.48 RG 1 w 120 305 m 722 305 l S Q',
- 'BT /F1 13 Tf 0.20 0.34 0.30 rg 1 0 0 1 160 258 Tm (Completo los tres modulos y aprobo el examen integrador del curso practico) Tj ET',
- 'BT /F1 13 Tf 0.20 0.34 0.30 rg 1 0 0 1 255 231 Tm (de cultivo de Macrobrachium rosenbergii.) Tj ET',
- 'BT /F2 14 Tf 0.12 0.36 0.28 rg 1 0 0 1 340 185 Tm (Resultado: '+Number(score)+'/6) Tj ET',
- 'BT /F1 11 Tf 0.32 0.42 0.37 rg 1 0 0 1 330 150 Tm (Fecha: '+esc(date)+') Tj ET',
- 'BT /F1 10 Tf 0.38 0.47 0.42 rg 1 0 0 1 180 91 Tm (Constancia educativa gratuita. No es titulo oficial ni licencia profesional.) Tj ET'
- ].join('\\n');
- const objs=['<< /Type /Catalog /Pages 2 0 R >>','<< /Type /Pages /Kids [3 0 R] /Count 1 >>','<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>','<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>','<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>','<< /Length '+stream.length+' >>\\nstream\\n'+stream+'\\nendstream'];
- let pdf='%PDF-1.4\\n',offsets=[0];for(let i=0;i<objs.length;i++){offsets.push(pdf.length);pdf+=(i+1)+' 0 obj\\n'+objs[i]+'\\nendobj\\n';}
- const xref=pdf.length;pdf+='xref\\n0 '+(objs.length+1)+'\\n0000000000 65535 f \\n';for(let i=1;i<offsets.length;i++)pdf+=String(offsets[i]).padStart(10,'0')+' 00000 n \\n';pdf+='trailer\\n<< /Size '+(objs.length+1)+' /Root 1 0 R >>\\nstartxref\\n'+xref+'\\n%%EOF';
- const bytes=new Uint8Array(pdf.length);for(let i=0;i<pdf.length;i++)bytes[i]=pdf.charCodeAt(i)&255;
- const blob=new Blob([bytes],{type:'application/pdf'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='constancia-gratuita-jairrestaura-camaron.pdf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+  'q 0.04 0.20 0.23 rg 0 0 842 595 re f Q',
+  'q 0.94 0.98 0.96 rg 20 20 802 555 re f Q',
+  'q 0.10 0.39 0.35 RG 3 w 34 34 774 527 re S Q',
+  'BT /F1 13 Tf 0.15 0.39 0.31 rg 1 0 0 1 300 515 Tm (JAIRRESTAURA CAMARON) Tj ET',
+  'BT /F2 29 Tf 0.04 0.20 0.23 rg 1 0 0 1 190 438 Tm (CONSTANCIA DE FINALIZACION) Tj ET',
+  'BT /F1 15 Tf 0.20 0.34 0.30 rg 1 0 0 1 265 380 Tm (Se deja constancia de que:) Tj ET',
+  'BT /F2 27 Tf 0.04 0.30 0.27 rg 1 0 0 1 140 322 Tm ('+esc(name)+') Tj ET',
+  'q 0.35 0.60 0.48 RG 1 w 120 305 m 722 305 l S Q',
+  'BT /F1 13 Tf 0.20 0.34 0.30 rg 1 0 0 1 160 258 Tm (Completo los tres modulos y aprobo el examen integrador del curso practico) Tj ET',
+  'BT /F1 13 Tf 0.20 0.34 0.30 rg 1 0 0 1 255 231 Tm (de cultivo de Macrobrachium rosenbergii.) Tj ET',
+  'BT /F2 14 Tf 0.12 0.36 0.28 rg 1 0 0 1 340 185 Tm (Resultado: '+Number(score)+'/6) Tj ET',
+  'BT /F1 11 Tf 0.32 0.42 0.37 rg 1 0 0 1 330 150 Tm (Fecha: '+esc(date)+') Tj ET',
+  'BT /F1 10 Tf 0.38 0.47 0.42 rg 1 0 0 1 180 91 Tm (Constancia educativa gratuita. No es titulo oficial ni licencia profesional.) Tj ET'
+ ].join('\n');
+ const objs=[
+  '<< /Type /Catalog /Pages 2 0 R >>',
+  '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
+  '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>',
+  '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
+  '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>',
+  '<< /Length '+stream.length+' >>\nstream\n'+stream+'\nendstream'
+ ];
+ let pdf='%PDF-1.4\n',offsets=[0];
+ for(let i=0;i<objs.length;i++){offsets.push(pdf.length);pdf+=(i+1)+' 0 obj\n'+objs[i]+'\nendobj\n';}
+ const xref=pdf.length;
+ pdf+='xref\n0 '+(objs.length+1)+'\n0000000000 65535 f \n';
+ for(let i=1;i<offsets.length;i++)pdf+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';
+ pdf+='trailer\n<< /Size '+(objs.length+1)+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';
+ const bytes=new Uint8Array(pdf.length);
+ for(let i=0;i<pdf.length;i++)bytes[i]=pdf.charCodeAt(i)&255;
+ const blob=new Blob([bytes],{type:'application/pdf'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='constancia-gratuita-jairrestaura-camaron.pdf';document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1500);
 }
 
 const intensiveVisuals=[["public/visuals/m04-0.svg","public/visuals/m04-1.svg","public/visuals/m04-2.svg"],["public/visuals/m05-0.svg","public/visuals/m06-0.svg","public/visuals/m07-0.svg"],["public/visuals/m10-0.svg","public/visuals/m10-1.svg","public/visuals/m10-2.svg"]];
