@@ -66,7 +66,8 @@ function App(){
  const [calc,setCalc]=useState({length:'20',width:'10',depth:'1',volume:'10000',stockArea:'200',stockVolume:'10000',stockCount:'1000',biomassCount:'1000',biomassWeight:'10',feedRate:'',seeded:'1000',alive:'900',costFixed:'1000000',costVariable:'5000',salePrice:'9000',fcaFeed:'100',fcaGain:'50'});
  const [quiz,setQuiz]=useState({});
  const [quizResult,setQuizResult]=useState(false);
- const [gloss,setGloss]=useState('');\n const [studentName,setStudentName]=useState('');
+ const [gloss,setGloss]=useState('');
+ const [studentName,setStudentName]=useState('');
  const totalLessons=modules.reduce((a,m)=>a+m.lessons.length,0);
  const progress=Math.round((completed.length+passedModules.length)/(totalLessons+modules.length)*100);
  const currentModule=modules.find(m=>m.id===activeModule)||modules[0];
